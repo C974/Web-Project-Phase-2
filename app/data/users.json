@@ -1,0 +1,142 @@
+[
+  {
+    "type": "admin",
+    "name": "himel",
+    "email": "himel11111@gmail.com",
+    "password": "123456",
+    "balance": 0
+  },
+  {
+    "type": "seller",
+    "name": "emma",
+    "email": "emma123@gmail.com",
+    "password": "password123",
+    "balance": 0
+  },
+  {
+    "type": "buyer",
+    "name": "john",
+    "email": "john321@gmail.com",
+    "password": "abc123",
+    "balance": 2000000
+  },
+  {
+    "type": "buyer",
+    "name": "sara",
+    "email": "sara456@gmail.com",
+    "password": "sara456",
+    "balance": 2000000
+  },
+  {
+    "type": "buyer",
+    "name": "alex",
+    "email": "alex777@gmail.com",
+    "password": "qwerty",
+    "balance": 2000000
+  },
+  {
+    "type": "buyer",
+    "name": "lisa",
+    "email": "lisa999@gmail.com",
+    "password": "lisa123",
+    "balance": 2000000
+  },
+  {
+    "type": "buyer",
+    "name": "mike",
+    "email": "mike000@gmail.com",
+    "password": "mikepass",
+    "balance": 2000000
+  },
+  {
+    "type": "buyer",
+    "name": "amy",
+    "email": "amy111@gmail.com",
+    "password": "password1",
+    "balance": 2000000
+  },
+  {
+    "type": "seller",
+    "name": "ryan",
+    "email": "ryan1234@gmail.com",
+    "password": "ryanpass",
+    "balance": 0
+  },
+  {
+    "type": "buyer",
+    "name": "julia",
+    "email": "julia456@gmail.com",
+    "password": "juliapass",
+    "balance": 2000000
+  },
+  {
+    "type": "seller",
+    "name": "david",
+    "email": "david789@gmail.com",
+    "password": "davidpass",
+    "balance": 0
+  },
+  {
+    "type": "admin",
+    "name": "emily",
+    "email": "emily999@gmail.com",
+    "password": "emilypass",
+    "balance": 2000000
+  },
+  {
+    "type": "admin",
+    "name": "sam",
+    "email": "sam111@gmail.com",
+    "password": "sampass",
+    "balance": 0
+  },
+  {
+    "type": "buyer",
+    "name": "mia",
+    "email": "mia1234@gmail.com",
+    "password": "miapass",
+    "balance": 2000000
+  },
+  {
+    "type": "seller",
+    "name": "chris",
+    "email": "chris222@gmail.com",
+    "password": "chrispass",
+    "balance": 0
+  },
+  {
+    "type": "seller",
+    "name": "olivia",
+    "email": "olivia333@gmail.com",
+    "password": "oliviapass",
+    "balance": 0
+  },
+  {
+    "type": "buyer",
+    "name": "ethan",
+    "email": "ethan444@gmail.com",
+    "password": "ethanpass",
+    "balance": 2000000
+  },
+  {
+    "type": "buyer",
+    "name": "ava",
+    "email": "ava555@gmail.com",
+    "password": "avapass",
+    "balance": 2000000
+  },
+  {
+    "type": "buyer",
+    "name": "noah",
+    "email": "noah666@gmail.com",
+    "password": "noahpass",
+    "balance": 2000000
+  },
+  {
+    "type": "buyer",
+    "name": "mia",
+    "email": "mia777@gmail.com",
+    "password": "miapass",
+    "balance": 2000000
+  }
+]
