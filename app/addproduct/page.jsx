@@ -34,7 +34,7 @@ const AddProduct = () => {
         },
         body: JSON.stringify(productData),
       });
-      console.log(response);
+
       if (response.ok) {
         toast.success("Product added successfully!!!", {
           position: "top-right",

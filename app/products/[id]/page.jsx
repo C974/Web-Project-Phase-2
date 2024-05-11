@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
@@ -16,7 +17,6 @@ const ProductDetails = ({ params }) => {
       .then((data) => setFilteredProduct(data))
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
-  console.log(filteredProduct);
 
   return (
     <>

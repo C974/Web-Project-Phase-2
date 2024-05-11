@@ -14,6 +14,7 @@ const Statistics = () => {
   const [products, setProducts] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState("");
   const [buyers, setBuyers] = useState([]);
+  const [purchaseBuyers, setPurchaseBuyers] = useState([]);
 
   const [totalPrice, setTotalPrice] = useState(0);
   const [avgPrice, setAvgPrice] = useState(0);
@@ -26,7 +27,7 @@ const Statistics = () => {
   }, []);
 
   useEffect(() => {
-    fetch("/api/buyers")
+    fetch("/api/users/buyer")
       .then((response) => response.json())
       .then((data) => setBuyers(data))
       .catch((error) => console.error("Error fetching buyers:", error));
@@ -54,7 +55,7 @@ const Statistics = () => {
       try {
         const response = await fetch("/api/purchases/buyer");
         const data = await response.json();
-        setBuyers(data);
+        setPurchaseBuyers(data);
       } catch (error) {
         console.error("Error fetching buyers data:", error);
       }
@@ -62,28 +63,31 @@ const Statistics = () => {
 
     fetchBuyersData();
   }, []);
-  console.log(buyers);
+
   const handleLocationChange = (event) => {
     setSelectedLocation(event.target.value);
   };
 
   // Calculate buyers by location based on selected location
-  const calculateBuyersByLocation = () => {
+  const calculateBuyersByLocation = (buyers) => {
     const buyersByLocation = {};
     buyers.forEach((buyer) => {
       const location = buyer.city;
+      // Increase the count for the location
       buyersByLocation[location] = (buyersByLocation[location] || 0) + 1;
     });
     return buyersByLocation;
   };
 
-  const buyersByLocation = calculateBuyersByLocation();
+  // Assuming you have a 'buyers' array defined somewhere containing buyer objects
+  const buyersByLocation = calculateBuyersByLocation(buyers);
+  console.log(purchaseBuyers, selectedLocation);
   return (
     <>
       <Navbar />
       <div className="w-[95%] mx-auto py-10">
         <AllOrderList />
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 gap-4">
           <div className="h-full w-full px-6 py-10 rounded-md shadow-2xl border border-gray-200 flex flex-col items-center justify-center gap-4">
             <p className="text-2xl font-semibold text-center">Total Amaount</p>
             <p className="text-lg font-semibold text-center">${totalPrice}</p>
@@ -102,9 +106,9 @@ const Statistics = () => {
               className="border w-[250px] px-2 py-1 rounded-md outline-none"
             >
               <option value="">Select a location</option>
-              {Object.keys(buyersByLocation).map((location) => (
-                <option key={location} value={location}>
-                  {location} ({buyersByLocation[location]} buyers)
+              {purchaseBuyers.map((location, index) => (
+                <option key={index} value={location?.city}>
+                  {location?.city} ({location?.count?.city} buyers)
                 </option>
               ))}
             </select>
@@ -112,12 +116,6 @@ const Statistics = () => {
               Selected location:
               <span className="text-red-700 font-semibold pl-2">
                 {selectedLocation}
-              </span>
-            </p>
-            <p>
-              Selected buyer:
-              <span className="text-green-700 font-semibold pl-2">
-                {buyersByLocation[selectedLocation]}
               </span>
             </p>
           </div>

@@ -31,7 +31,6 @@ class productsRepo {
   }
 
   async updateProduct(id, body) {
-    console.log(body);
     try {
       return prisma.product.update({
         where: {

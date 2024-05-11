@@ -72,7 +72,7 @@ const Purchase = ({ params }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
-      filteredProduct?.productQuantity - purchaseData.quantity < 1 ||
+      filteredProduct?.productQuantity - purchaseData.quantity <0  ||
       purchaseData.price * purchaseData.quantity > buyer?.balance
     ) {
       toast.error("You cannot buy this products", {
@@ -100,6 +100,45 @@ const Purchase = ({ params }) => {
           body: JSON.stringify(purchaseData),
         });
 
+        const totalPrice = purchaseData.price * purchaseData.quantity;
+
+        if (buyer) {
+          const response = await fetch(`/api/users/buyer/${buyer?.email}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ balance: (buyer.balance -= totalPrice) }),
+          });
+        }
+
+        if (seller) {
+          const email = filteredProduct?.sellerEmail;
+          let sellerBalance = seller[0]?.balance;
+          const newBalance = (sellerBalance += totalPrice);
+
+          const response = await fetch(`/api/users/seller/${email}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ balance: newBalance }),
+          });
+        }
+        if (seller) {
+          let oldQuantity = filteredProduct?.productQuantity;
+          const newQuantity = (oldQuantity -= purchaseData.quantity);
+
+          const response = await fetch(`/api/products/${filteredProduct?.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              productQuantity: newQuantity,
+            }),
+          });
+        }
         if (response.ok) {
           toast.success("Product Purchases Successfully!!!", {
             position: "top-right",
@@ -110,57 +149,16 @@ const Purchase = ({ params }) => {
             draggable: true,
             progress: undefined,
             theme: "light",
+            onClose: () => {
+              setTimeout(() => {
+                window.location.href = "/products/myorder";
+              }, 1000);
+            },
           });
-
-          const totalPrice = purchaseData.price * purchaseData.quantity;
-
-          if (buyer) {
-            const response = await fetch(`/api/users/buyer/${buyer?.email}`, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ balance: (buyer.balance -= totalPrice) }),
-            });
-          }
-
-          if (seller) {
-            const email = filteredProduct?.sellerEmail;
-            const newBalance = (seller[0].balance += totalPrice);
-
-            const response = await fetch(`/api/users/seller/${email}`, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ balance: newBalance }),
-            });
-          }
-          if (seller) {
-            let oldQuantity = filteredProduct?.productQuantity;
-            const newQuantity = (oldQuantity -= purchaseData.quantity);
-
-            const response = await fetch(
-              `/api/products/${filteredProduct?.id}`,
-              {
-                method: "PUT",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  productQuantity: newQuantity,
-                }),
-              }
-            );
-          }
-
-          window.location.href = "/products/myorder";
-        } else {
-          throw new Error("Failed to add User");
         }
       } catch (error) {
-        console.error("Error adding user:", error);
-        alert("Failed to add user");
+        console.error("Error adding product:", error);
+        alert("Failed to add product");
       }
     }
   };
@@ -174,7 +172,7 @@ const Purchase = ({ params }) => {
         <form id="purchaseForm">
           <div className="purchase__form">
             <div>
-              <label for="fullName">Full Name</label>
+              <label for="fullName" required>Full Name</label >
               <input
                 type="text"
                 id="fullName"
@@ -185,7 +183,7 @@ const Purchase = ({ params }) => {
               />
             </div>
             <div>
-              <label for="address">Address</label>
+              <label for="address" required>Address</label>
               <input
                 type="text"
                 id="address"
@@ -196,7 +194,7 @@ const Purchase = ({ params }) => {
               />
             </div>
             <div>
-              <label for="mobileNumber">Mobile Number</label>
+              <label for="mobileNumber" required>Mobile Number</label>
               <input
                 type="tel"
                 id="mobileNumber"
@@ -207,7 +205,7 @@ const Purchase = ({ params }) => {
               />
             </div>
             <div>
-              <label for="city">City</label>
+              <label for="city" required>City</label>
               <input
                 type="text"
                 id="city"
@@ -219,7 +217,7 @@ const Purchase = ({ params }) => {
             </div>
           </div>
           <div>
-            <label for="quantity">Quantity:</label>
+            <label for="quantity" required>Quantity:</label>
             <input
               type="number"
               id="quantity"

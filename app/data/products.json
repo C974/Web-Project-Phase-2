@@ -1,67 +1,51 @@
 [
   {
-    "productName": "Tesla Model 3",
-    "productDesc": "The Tesla Model 3 is a compact electric sedan that is the most affordable model in the automaker's lineup. It has a starting price of $29,000 and a range of 220 miles.",
-    "productImg": "https://i.guim.co.uk/img/media/96dff775945181b8e1abd36ca1ca8a71e1be4bf1/574_369_2633_1580/master/2633.jpg?width=1200&quality=85&auto=format&fit=max&s=564f90c3958219bf7f070d0d17309002",
+    "productName": "TESLA Model X",
+    "productDesc": "Tesla upgraded the Model X again in 2023 for the 2024 model year and improved it in a few areas, but it was almost impossible to spot the differences between it and its predecessor. While other automakers struggled to add exterior details to the upgraded vehicle compared to their predecessors, Tesla focused on what mattered. As a result, only its fans could spot the differences between the 2022 and the 2024 model years. On the other hand, the refreshed product came with a significant improvement in terms of manufacturing quality, a problem for which Tesla was often criticized. But the most significant difference was its price, which was lowered to fit into a government program for tax deductions. As a result, Tesla tried to keep its cars on top of the EV market, even though it lost the lead for the largest EV maker in the world, falling behind the Chinese automaker BYD.",
+    "productImg": "https://s1.cdn.autoevolution.com/images/models/TESLA_Model-X-2023_main.jpg",
     "productPrice": 29000,
     "productQuantity": 20,
     "sellerEmail": "emma123@gmail.com"
   },
   {
-    "productName": "Toyota Camry",
-    "productDesc": "The Toyota Camry is a midsize sedan known for its reliability and fuel efficiency. It offers a comfortable ride, spacious interior, and a range of available features.",
-    "productImg": "https://cars.usnews.com/pics/size/640x420/static/images/article/202106/134347/1_title_2022_toyota_camry.jpg",
+    "productName": "TESLA Model 3",
+    "productDesc": "Despite being just a facelifted version of the 2017 Tesla Model 3, the 2024 model year version of this electric vehicle came with essential updates and upgrades. The Model 3 was one of the best cars in its class. Not only that it could outrun most of its competitors in terms of performance, but it was also among the most affordable. In addition, it provided several features that were not available on any other car brand. For the 2024 model year, which was revealed in September 2023, Tesla claimed that it changed or improved more than 50 percent of the vehicle. It was a bold statement for a vehicle that looked mostly the same. And yet, there were significant upgrades for it.",
+    "productImg": "https://s1.cdn.autoevolution.com/images/models/TESLA_Model-3-2023_main.jpg",
     "productPrice": 26000,
     "productQuantity": 20,
     "sellerEmail": "ryan1234@gmail.com"
   },
   {
-    "productName": "Honda Accord",
-    "productDesc": "The Honda Accord is a popular midsize sedan known for its refined driving dynamics, spacious interior, and fuel-efficient engines. It offers a comfortable ride and a range of available features.",
-    "productImg": "https://cdn.motor1.com/images/mgl/L0vGe/s1/2021-honda-accord-sport-20t.jpg",
+    "productName": "TESLA Model S",
+    "productDesc": "Customers always ask for more, and Tesla tried to offer them what they wanted, and even more. That's why the Model S received an update in 2016. Tesla engineers knew that they could offer more for the Model S, but they didn't want to provide it before it was tested. After that, other departments gathered and came up with new ideas. When all the parts were gathered, there was a one-man-only decision to make the changes: Elon Musk. And he gave the OK.",
+    "productImg": "https://s1.cdn.autoevolution.com/images/models/TESLA-MOTORS_Model-S-2016_main.jpg",
     "productPrice": 25000,
     "productQuantity": 20,
     "sellerEmail": "emma123@gmail.com"
   },
   {
-    "productName": "Ford Mustang",
-    "productDesc": "The Ford Mustang is an iconic sports car known for its powerful engines, sleek design, and engaging driving experience. It offers a range of performance options and customizable features.",
-    "productImg": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2022-ford-mustang-mach-1-1602716696.jpg?crop=1.00xw:0.752xh;0,0.143xh&resize=1200:*",
+    "productName": "TESLA Roadster",
+    "productDesc": "Revealed at a charity event, the 2020 Tesla Roadster was the modern supercar from the American electric-car manufacturer Tesla. Tesla built a few models since 2008 when the first Roadster came out from the factory. By 2020, the Model S, Model X, and Model Y started to be seen worldwide. It was not just a local brand anymore, and the electric-car revolution started to pick-up. Other car-manufacturer followed the trend, and soon, Tesla was not the only one to charge its cars at supercharger stations. But they began to lose ground in the performance area.",
+    "productImg": "https://s1.cdn.autoevolution.com/images/models/TESLA-MOTORS_Roadster-2018_main.jpg",
     "productPrice": 35000,
     "productQuantity": 20,
     "sellerEmail": "david789@gmail.com"
   },
 
   {
-    "productName": "Tesla Model 3",
-    "productDesc": "The Tesla Model 3 is a compact electric sedan that is the most affordable model in the automaker's lineup. It has a starting price of $29,000 and a range of 220 miles.",
-    "productImg": "https://i.guim.co.uk/img/media/96dff775945181b8e1abd36ca1ca8a71e1be4bf1/574_369_2633_1580/master/2633.jpg?width=1200&quality=85&auto=format&fit=max&s=564f90c3958219bf7f070d0d17309002",
+    "productName": "TESLA Cybertruck",
+    "productDesc": "The pickup-truck was something familiar with the American car industry. In fact, the most sold car in the world was the Ford F150, which was a pickup. That's why Tesla had to offer something on that market. While the pickup-trucks started to be used more like leisure vehicles, most car-makers started to include luxury features on them. It was a switch from utility vehicle to family vehicle able to work or carry tents, motorcycles, ATVs, and pull trailers. Tesla said that they could build something better, and that was the Cybertruck.",
+    "productImg": "https://s1.cdn.autoevolution.com/images/models/TESLA-MOTORS_Cybertruck-2021_main.jpg",
     "productPrice": 29000,
     "productQuantity": 20,
     "sellerEmail": "chris222@gmail.com"
   },
   {
-    "productName": "Tesla Model S",
-    "productDesc": "The Tesla Model S is a full-size electric sedan known for its impressive range, acceleration, and technology features. It offers a luxurious interior and a smooth and quiet ride.",
-    "productImg": "https://i.ytimg.com/vi/ehhzbW0F8I4/maxresdefault.jpg",
+    "productName": "TESLA Model Y",
+    "productDesc": "The Model Y was teased by Tesla for a few years. When the market started to switch toward the SUV vehicles instead of station-wagons and MPVs, it was the right time for Tesla to show something in that segment too. The Model Y was a complete package: an SUV, an MPV and, on top of that, a supersport vehicle that made a lot of petrolheads burst into tears when they were smoked on the drag-strip by a big and heavy SUV that didn't sound like a car. It didn't sound at all.",
+    "productImg": "https://s1.cdn.autoevolution.com/images/models/TESLA-MOTORS_Model-Y-2019_main.jpg",
     "productPrice": 80000,
     "productQuantity": 20,
     "sellerEmail": "seller2@gmail.com"
-  },
-  {
-    "productName": "Tesla Model X",
-    "productDesc": "The Tesla Model X is a full-size electric SUV known for its falcon-wing doors, spacious interior, and impressive performance. It offers seating for up to seven passengers and a range of features.",
-    "productImg": "https://cdn.motor1.com/images/mgl/QmXgY/s3/2021-tesla-model-x.jpg",
-    "productPrice": 90000,
-    "productQuantity": 20,
-    "sellerEmail": "seller3@gmail.com"
-  },
-  {
-    "productName": "Tesla Model Y",
-    "productDesc": "The Tesla Model Y is a compact electric SUV that offers a balance of performance, range, and versatility. It has a starting price of $39,000 and a range of up to 300 miles.",
-    "productImg": "https://cdn.motor1.com/images/mgl/LmdjG/s1/tesla-model-y-performance-2020.jpg",
-    "productPrice": 90000,
-    "productQuantity": 20,
-    "sellerEmail": "emma123@gmail.com"
   }
 ]

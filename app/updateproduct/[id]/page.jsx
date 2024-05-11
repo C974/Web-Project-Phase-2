@@ -56,8 +56,8 @@ const UpdateProduct = ({ params }) => {
         window.location.href = "/products";
       }
     } catch (error) {
-      console.error("Error adding Product:", error);
-      alert("Failed to add Product");
+      console.error("Error updating Product:", error);
+      alert("Failed to update Product");
     }
   };
   return (

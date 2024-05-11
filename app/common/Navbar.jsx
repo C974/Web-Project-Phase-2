@@ -9,6 +9,7 @@ import { FaCaretDown, FaCartArrowDown, FaUserCircle } from "react-icons/fa";
 const Navbar = () => {
   const [userType, setUserType] = useState(null);
   const [currentBalance, setCurrentBalance] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const storedUserType = localStorage.getItem("userType");
@@ -86,10 +87,14 @@ const Navbar = () => {
               <img
                 src="/images/menu.png"
                 className="menu-icon"
-                onClick="toggleMenu()"
+                onClick={() => setMenuOpen(!menuOpen)}
                 alt="Menu Icon"
               />
-              <ul className="dropdown-menu" id="dropdownMenu">
+              <ul
+                className="dropdown-menu"
+                id="dropdownMenu"
+                style={{ display: `${menuOpen ? "block" : "none"}` }}
+              >
                 <li>
                   <Link href="/">Home</Link>
                 </li>

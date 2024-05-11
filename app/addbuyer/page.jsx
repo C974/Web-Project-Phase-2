@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import Footer from "../common/Footer";
 import Navbar from "../common/Navbar";
 
@@ -31,21 +32,22 @@ const AddBuyer = () => {
         body: JSON.stringify(registerData),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to add User");
+      if (response.ok) {
+        toast.success("Product added successfully!!!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        window.location.href = "/statistics";
       }
-
-      setRegisterData({
-        name: "",
-        email: "",
-        location: "",
-        type: "buyer",
-        balance: 0,
-      });
-      window.location.href = "/statistics";
     } catch (error) {
-      console.error("Error adding user:", error);
-      alert("Failed to add user");
+      console.error("Error adding Buyer:", error);
+      alert("Failed to add Buyer");
     }
   };
 
@@ -86,6 +88,7 @@ const AddBuyer = () => {
           Register
         </button>
       </form>
+      <ToastContainer />
       <Footer />
     </>
   );

@@ -9,8 +9,9 @@ import { FaQuoteLeft, FaStar } from "react-icons/fa";
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   const userType = localStorage.getItem("userType");
+
   useEffect(() => {
-    fetch(`/api/products/`)
+    fetch(`/api/products`)
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching users:", error));
@@ -38,12 +39,14 @@ const HomePage = () => {
       </div>
       <div className="small-container">
         <h2 className="title">Featured Products</h2>
-        <div className="small-container grid grid-cols-3  gap-6 pb-6">
+        <div className="small-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6 pb-6">
           {products.slice(0, 3).map((product, index) => (
             <Link
               key={index}
               href={
-                userType === "buyer"
+                userType === null
+                  ? `/account`
+                  : userType === "buyer"
                   ? `/products/${product.productName}`
                   : `/updateproduct/${product.productName}`
               }

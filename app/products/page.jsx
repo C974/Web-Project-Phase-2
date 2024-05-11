@@ -15,17 +15,19 @@ const Products = () => {
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
-  console.log(products);
+
   return (
     <>
       <Navbar />
       <h2 className="text-4xl text-center capitalize py-8">Product list</h2>
-      <div className="small-container grid grid-cols-3  gap-6 pb-6">
+      <div className="small-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6 pb-6">
         {products.map((product, index) => (
           <Link
             key={index}
             href={
-              userType === "buyer"
+              userType === null
+                ? `/account`
+                : userType === "buyer"
                 ? `/products/${product.productName}`
                 : `/updateproduct/${product.productName}`
             }

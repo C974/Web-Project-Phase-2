@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import Footer from "../common/Footer";
 import Navbar from "../common/Navbar";
 
@@ -67,7 +68,21 @@ const Account = () => {
 
       window.location.href = "/";
     } else {
-      // User does not exist or incorrect credentials
+      toast.error(" Incorrect credentials, Check the Email and Password", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        onClose: () => {
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
+        },
+      });
     }
   };
 
@@ -82,31 +97,22 @@ const Account = () => {
         body: JSON.stringify(registerData),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to add User");
-      }
-      if (registerData) {
-        let userType = "";
-        if (registerData.type === "admin") {
-          userType = "admin";
-        } else if (registerData.type === "seller") {
-          userType = "seller";
-        } else {
-          userType = "buyer";
+      if (response.ok) {
+        if (registerData) {
+          let userType = "";
+          if (registerData.type === "admin") {
+            userType = "admin";
+          } else if (registerData.type === "seller") {
+            userType = "seller";
+          } else {
+            userType = "buyer";
+          }
+          localStorage.setItem("userType", userType);
+
+          localStorage.setItem("userMail", registerData.email);
         }
-        localStorage.setItem("userType", userType);
-
-        localStorage.setItem("userMail", registerData.email);
+        window.location.href = "/";
       }
-
-      setRegisterData({
-        name: "",
-        email: "",
-        location: "",
-        type: "",
-        balance: 0,
-      });
-      window.location.href = "/";
     } catch (error) {
       console.error("Error adding user:", error);
       alert("Failed to add user");
@@ -206,6 +212,7 @@ const Account = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
       <Footer />
     </>
   );

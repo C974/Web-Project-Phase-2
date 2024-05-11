@@ -876,6 +876,9 @@ form a {
   .logout__btn {
     font-size: 30px;
   }
+  .contact-form {
+    width: 100vw;
+  }
 }
 .mobile-menu {
   position: relative;
