@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is phase 2 of our web project, in this project we tanstioned form html, json code to React and prisma, react provides good features to speed up development process, like breking the page into smaller componots then injecting the componot whenever it's needed  
 
 ## Getting Started
 
